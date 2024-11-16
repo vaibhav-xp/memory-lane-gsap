@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+// colors
+$primary: #9A2143;
+$black: #1A1A1A;
+$text: #4F5B67;
+$gold: #BFA054;
+$border: #EAECEE;
+$border-radius: 12px;
+
+// gradient
+$pink-gradient: linear-gradient();
+
+//shadows
+$container-shadow: 0px 4px 10px 0px #ABABAB1A,
+    0px 18px 18px 0px #ABABAB17,
+    0px 40px 24px 0px #ABABAB0D,
+    0px 72px 29px 0px #ABABAB00,
+    0px 112px 31px 0px #ABABAB00;
+
+$frame-shadow: 0px 1.02px 3.06px 0px #6E6E6E1A,
+    0px 5.1px 5.1px 0px #6E6E6E17,
+    0px 12.25px 7.15px 0px #6E6E6E0D,
+    0px 22.46px 9.19px 0px #6E6E6E03,
+    0px 34.71px 9.19px 0px #6E6E6E00;
+
+$popup-shadows: 0px 1px 3px 0px #6E6E6E1A,
+    0px 5px 5px 0px #6E6E6E17,
+    0px 12px 7px 0px #6E6E6E0D,
+    0px 22px 9px 0px #6E6E6E03,
+    0px 34px 9px 0px #6E6E6E00;
+
+@mixin fs-h1 {
+    font-size: clamp(36px, 4vw, 48px);
+    font-weight: 400;
+    font-family: Playfair Display;
+    color: $black;
+}
+
+@mixin fs-h2($color: $primary) {
+    font-family: Playfair Display;
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 400;
+    color: $color;
+}
+
+@mixin fs-h3($color: $text) {
+    font-size: clamp(16px, 2.5vw, 20px);
+    font-weight: 600;
+    color: $text;
+}
+
+@mixin fs-p($color: $text) {
+    font-size: clamp(14px, 2vw, 18px);
+    font-weight: 500;
+    color: $color;
+}
+
+@mixin flex($dir: row, $jc: space-between, $ai: center, $gap: 2rem) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $jc;
+    align-items: $ai;
+    gap: $gap;
+}
+
+.fs-h1 {
+    @include fs-h1;
+}
+
+.fs-h2 {
+    @include fs-h2($primary);
+}
+
+.fs-h3 {
+    @include fs-h3($text);
+}
+
+.fs-p {
+    @include fs-p;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    user-select: none;
+    color: $text;
+    font-size: 1.6rem;
+}
+
+a {
+    color: $text;
+    text-decoration: none;
+}
+
+.container {
+    padding: 2rem;
+    border: 1px solid $border;
+    border-radius: $border-radius;
+    box-shadow: $container-shadow;
+    margin: 2rem;
+    overflow: hidden;
+}
