@@ -115,3 +115,74 @@
     bottom: 0;
     right: 0;
 }
+
+.hero-desktop-heart {
+    position: absolute;
+    aspect-ratio: square;
+    width: 2vw;
+    height: auto;
+    top: 10vw;
+    left: 2.7vw;
+}
+
+.hero-desktop-leaf {
+    position: absolute;
+    aspect-ratio: square;
+    width: 7vw;
+    height: auto;
+    top: 4vw;
+    left: 40vw;
+}
+
+.hero-desktop-square {
+    position: absolute;
+    aspect-ratio: square;
+    width: 3vw;
+    height: auto;
+    top: 4.8vw;
+    right: 3vw;
+}
+
+.hero-desktop-grass {
+    position: absolute;
+    aspect-ratio: 111/55;
+    height: auto;
+    bottom: 0;
+    left: 0;
+}
+
+.hero-desktop-butterfly {
+    position: absolute;
+    aspect-ratio: 25/28;
+    width: 2vw;
+    height: auto;
+    bottom: 9.8vw;
+    left: 27vw;
+}
+
+.hero-desktop-circle {
+    position: absolute;
+    aspect-ratio: square;
+    width: 2vw;
+    height: auto;
+    bottom: 2vw;
+    right: 23.8vw;
+}
+
+.hero-desktop-tree-1 {
+    position: absolute;
+    aspect-ratio: 108/153;
+    width: 6vw;
+    height: auto;
+    bottom: 13vw;
+    right: 13vw;
+}
+
+.hero-desktop-tree-2 {
+    position: absolute;
+    aspect-ratio: 58/108;
+    width: 4vw;
+    height: auto;
+    top: 20vw;
+    left: 13vw;
+}

@@ -6,6 +6,7 @@
     box-shadow: $frame-shadow;
     background-color: white;
     position: absolute;
+    z-index: 1;
 
     >div {
         aspect-ratio: 197/207;
@@ -14,6 +15,7 @@
         margin: auto;
         margin-top: 2.2vw;
         position: relative;
+        overflow: hidden;
 
         >img {
             object-fit: cover;
@@ -33,27 +35,36 @@
 .hero-frame-desktop-1 {
     width: 13vw;
     rotate: -7deg;
-    left: 5%;
-    top: 10%;
+    left: 6vw;
+    top: 4vw;
 }
 
 .hero-frame-desktop-2 {
     width: 14vw;
     rotate: 7deg;
-    left: 78%;
-    top: 0%;
+    right: 10vw;
+    top: 0vw;
+
+    >div>img {
+        object-position: 0% 16%;
+    }
 }
 
 .hero-frame-desktop-3 {
     width: 13vw;
     rotate: 3.6deg;
-    left: 10%;
-    bottom: -8%;
+    left: 10vw;
+    bottom: -3vw;
+
+    >div>img {
+        object-position: 0% 100%;
+        scale: 1.2;
+    }
 }
 
 .hero-frame-desktop-4 {
     width: 13vw;
     rotate: -8.4deg;
-    right: 8%;
-    bottom: -8%;
+    right: 7vw;
+    bottom: -3.5vw;
 }

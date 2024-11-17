@@ -73,19 +73,77 @@ export default function HeroDesktop() {
           className="hero-frame-desktop-1"
         />
         <HeroImageFrame
-          text="Celebration of union"
-          image="/assets/hero-frame-img-1.webp"
+          text="Cherish Memories"
+          image="/assets/hero-frame-img-2.webp"
           className="hero-frame-desktop-2"
         />
         <HeroImageFrame
-          text="Celebration of union"
-          image="/assets/hero-frame-img-1.webp"
+          text="Blissful Journey"
+          image="/assets/hero-frame-img-3.webp"
           className="hero-frame-desktop-3"
         />
         <HeroImageFrame
           text="Celebration of union"
-          image="/assets/hero-frame-img-1.webp"
+          image="/assets/hero-frame-img-4.webp"
           className="hero-frame-desktop-4"
+        />
+
+        {/* Other Overlay */}
+        <Image
+          src={"/assets/hero-heart.svg"}
+          alt="line-overlay"
+          width={20}
+          height={20}
+          className="hero-desktop-heart"
+        />
+        <Image
+          src={"/assets/hero-leaf.svg"}
+          alt="line-overlay"
+          width={66}
+          height={132}
+          className="hero-desktop-leaf"
+        />
+        <Image
+          src={"/assets/hero-square.svg"}
+          alt="line-overlay"
+          width={50}
+          height={50}
+          className="hero-desktop-square"
+        />
+        <Image
+          src={"/assets/hero-grass.svg"}
+          alt="line-overlay"
+          width={111}
+          height={55}
+          className="hero-desktop-grass"
+        />
+        <Image
+          src={"/assets/hero-butterfly.svg"}
+          alt="line-overlay"
+          width={25}
+          height={28}
+          className="hero-desktop-butterfly"
+        />
+        <Image
+          src={"/assets/hero-circle.svg"}
+          alt="line-overlay"
+          width={36}
+          height={36}
+          className="hero-desktop-circle"
+        />
+        <Image
+          src={"/assets/hero-tree-1.svg"}
+          alt="line-overlay"
+          width={108}
+          height={153}
+          className="hero-desktop-tree-1"
+        />
+        <Image
+          src={"/assets/hero-tree-2.svg"}
+          alt="line-overlay"
+          width={58}
+          height={108}
+          className="hero-desktop-tree-2"
         />
       </div>
     </section>
