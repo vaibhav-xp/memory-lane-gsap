@@ -79,6 +79,23 @@ export default function HeroDesktop() {
       ease: "sine.inOut",
     });
 
+    gsap.from(".header-desk__content__middle__animate--top", {
+      y: -30,
+      opacity: 0,
+      duration: 2,
+      ease: "power3.out",
+      stagger: 0.3,
+    });
+
+    gsap.from(".header-desk__content__middle__animate--bottom", {
+      y: 30,
+      opacity: 0,
+      duration: 2,
+      ease: "power3.out",
+      stagger: 0.3,
+      delay: 0.5,
+    });
+
     // Tree Animation Timeline
     const tree2tl = gsap.timeline({ repeat: -1, yoyo: true });
     tree2tl
@@ -158,20 +175,24 @@ export default function HeroDesktop() {
             width={37}
             height={20}
             alt="memory-lane-logo"
+            className="header-desk__content__middle__animate--top"
           />
-          <p>
+          <p className="header-desk__content__middle__animate--top">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod
           </p>
-          <h1>
+          <h1 className="header-desk__content__middle__animate--bottom">
             Celebrate <span>love</span>, Share joy
           </h1>
-          <p>
+          <p className="header-desk__content__middle__animate--bottom">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
 
-          <Link href={"/"} className="btn">
+          <Link
+            href={"/"}
+            className="btn header-desk__content__middle__animate--bottom"
+          >
             Get Started
           </Link>
         </div>
