@@ -9,7 +9,7 @@ $border: #EAECEE;
 $border-radius: 12px;
 
 // gradient
-$pink-gradient: linear-gradient();
+$pink-gradient: linear-gradient(270deg, #821C38 -8.43%, #B22C51 100%);
 
 //shadows
 $container-shadow: 0px 4px 10px 0px #ABABAB1A,
@@ -30,15 +30,25 @@ $popup-shadows: 0px 1px 3px 0px #6E6E6E1A,
     0px 22px 9px 0px #6E6E6E03,
     0px 34px 9px 0px #6E6E6E00;
 
+
+// Font Family
+@mixin ff-playfair {
+    font-family: Playfair Display;
+}
+
+@mixin ff-manrope {
+    font-family: 'Manrope', sans-serif;
+}
+
 @mixin fs-h1 {
+    @include ff-playfair;
     font-size: clamp(36px, 4vw, 48px);
     font-weight: 400;
-    font-family: Playfair Display;
     color: $black;
 }
 
 @mixin fs-h2($color: $primary) {
-    font-family: Playfair Display;
+    @include ff-playfair;
     font-size: clamp(24px, 3vw, 36px);
     font-weight: 400;
     color: $color;
@@ -92,7 +102,7 @@ html {
 }
 
 body {
-    font-family: 'Manrope', sans-serif;
+    @include ff-manrope;
     user-select: none;
     color: $text;
     font-size: 1.6rem;
@@ -110,4 +120,11 @@ a {
     box-shadow: $container-shadow;
     margin: 2rem;
     overflow: hidden;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    background: $pink-gradient;
+    color: white;
+    border-radius: 1.3rem;
 }

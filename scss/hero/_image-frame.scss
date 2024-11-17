@@ -1,0 +1,59 @@
+@use "../variables" as *;
+
+.hero-image-frame {
+    aspect-ratio: 227/296;
+    height: auto;
+    box-shadow: $frame-shadow;
+    background-color: white;
+    position: absolute;
+
+    >div {
+        aspect-ratio: 197/207;
+        width: 85%;
+        height: auto;
+        margin: auto;
+        margin-top: 2.2vw;
+        position: relative;
+
+        >img {
+            object-fit: cover;
+        }
+    }
+
+    >p {
+        @include ff-playfair;
+        text-align: center;
+        text-transform: capitalize;
+        color: $primary;
+        margin-top: .7vw;
+        font-size: 1.1vw;
+    }
+}
+
+.hero-frame-desktop-1 {
+    width: 13vw;
+    rotate: -7deg;
+    left: 5%;
+    top: 10%;
+}
+
+.hero-frame-desktop-2 {
+    width: 14vw;
+    rotate: 7deg;
+    left: 78%;
+    top: 0%;
+}
+
+.hero-frame-desktop-3 {
+    width: 13vw;
+    rotate: 3.6deg;
+    left: 10%;
+    bottom: -8%;
+}
+
+.hero-frame-desktop-4 {
+    width: 13vw;
+    rotate: -8.4deg;
+    right: 8%;
+    bottom: -8%;
+}

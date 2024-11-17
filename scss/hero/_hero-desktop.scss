@@ -7,13 +7,111 @@
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
+    z-index: 0;
+    overflow: hidden;
 }
 
 .hero-desktop::before {
     content: "";
-    width: 100%;
-    height: 100%;
+    position: absolute;
     top: 0;
     left: 0;
-    background-color: black;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.hero-desktop__content {
+    @include flex(row, center, center, 0);
+    z-index: 10;
+    height: 100%;
+}
+
+.header-desk__content__middle {
+    max-width: 576px;
+    width: 100%;
+    @include flex(column, center, center, 2rem);
+    text-align: center;
+
+    >p:first-of-type {
+        font-size: 2rem;
+        font-weight: 600;
+    }
+
+    h1 {
+        @include fs-h1;
+        text-transform: capitalize;
+
+        >span {
+            position: relative;
+            z-index: 0;
+            display: inline-block;
+
+            &::after {
+                content: "";
+                background-image: url("../../public/assets/hero-heading-underline.svg");
+                position: absolute;
+                z-index: -1;
+                aspect-ratio: 71/11;
+                width: 100px;
+                background-repeat: no-repeat;
+                background-size: contain;
+                bottom: 0;
+                left: 55%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+}
+
+.hero-line-top-left {
+    position: absolute;
+    aspect-ratio: 219/234;
+    width: 12vw;
+    height: auto;
+    object-fit: contain;
+    top: 0;
+    left: 0;
+}
+
+.hero-line-top-right {
+    position: absolute;
+    aspect-ratio: 544/131;
+    width: 30vw;
+    height: auto;
+    object-fit: contain;
+    top: 0;
+    right: 0;
+}
+
+.hero-line-bottom-left-1 {
+    position: absolute;
+    aspect-ratio: 272/150;
+    width: 15vw;
+    height: auto;
+    object-fit: contain;
+    bottom: 0%;
+    left: 0%;
+}
+
+.hero-line-bottom-left-2 {
+    position: absolute;
+    aspect-ratio: 144/194;
+    width: 9vw;
+    height: auto;
+    object-fit: contain;
+    bottom: 0;
+    left: 20%;
+}
+
+.hero-line-bottom-right {
+    position: absolute;
+    aspect-ratio: 552/279;
+    width: 30vw;
+    height: auto;
+    object-fit: contain;
+    bottom: 0;
+    right: 0;
 }
