@@ -7,6 +7,7 @@
     background-color: white;
     position: absolute;
     z-index: 1;
+    transform-origin: 0% 0%;
 
     >div {
         aspect-ratio: 197/207;
@@ -53,7 +54,7 @@
 .hero-frame-desktop-3 {
     width: 13vw;
     rotate: 3.6deg;
-    left: 10vw;
+    left: 14vw;
     bottom: -3vw;
 
     >div>img {
@@ -65,6 +66,6 @@
 .hero-frame-desktop-4 {
     width: 13vw;
     rotate: -8.4deg;
-    right: 7vw;
-    bottom: -3.5vw;
+    right: 16vw;
+    bottom: -4vw;
 }

@@ -89,7 +89,7 @@
 .hero-line-bottom-left-1 {
     position: absolute;
     aspect-ratio: 272/150;
-    width: 15vw;
+    width: 16vw;
     height: auto;
     object-fit: contain;
     bottom: 0%;
@@ -103,13 +103,13 @@
     height: auto;
     object-fit: contain;
     bottom: 0;
-    left: 20%;
+    left: 25vw;
 }
 
 .hero-line-bottom-right {
     position: absolute;
     aspect-ratio: 552/279;
-    width: 30vw;
+    width: 40vw;
     height: auto;
     object-fit: contain;
     bottom: 0;
@@ -157,7 +157,7 @@
     width: 2vw;
     height: auto;
     bottom: 9.8vw;
-    left: 27vw;
+    left: 33vw;
 }
 
 .hero-desktop-circle {
@@ -166,7 +166,7 @@
     width: 2vw;
     height: auto;
     bottom: 2vw;
-    right: 23.8vw;
+    right: 32.8vw;
 }
 
 .hero-desktop-tree-1 {
@@ -175,7 +175,7 @@
     width: 6vw;
     height: auto;
     bottom: 13vw;
-    right: 13vw;
+    right: 18vw;
 }
 
 .hero-desktop-tree-2 {
@@ -183,6 +183,6 @@
     aspect-ratio: 58/108;
     width: 4vw;
     height: auto;
-    top: 20vw;
+    top: 19vw;
     left: 13vw;
 }
