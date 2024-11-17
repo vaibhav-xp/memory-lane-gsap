@@ -118,8 +118,9 @@
 
 .hero-desktop-heart {
     position: absolute;
+    transform: translate(0, 0);
     aspect-ratio: square;
-    width: 2vw;
+    width: 1.5vw;
     height: auto;
     top: 10vw;
     left: 2.7vw;
@@ -136,6 +137,7 @@
 
 .hero-desktop-square {
     position: absolute;
+    transform: translate(-50%, -50%);
     aspect-ratio: square;
     width: 3vw;
     height: auto;
@@ -162,6 +164,7 @@
 
 .hero-desktop-circle {
     position: absolute;
+    transform: translate(0, 0);
     aspect-ratio: square;
     width: 2vw;
     height: auto;

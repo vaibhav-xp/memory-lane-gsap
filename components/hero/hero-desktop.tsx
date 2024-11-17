@@ -8,99 +8,127 @@ import HeroImageFrame from "./image-frame";
 export default function HeroDesktop() {
   useGSAP(() => {
     gsap.registerPlugin(MotionPathPlugin);
+
+    // Leaf Animation
     gsap.from(".hero-desktop-leaf", {
       rotate: 50,
       opacity: 0,
-      duration: 1.5,
+      duration: 2,
       y: -300,
+      ease: "sine.out",
     });
 
+    // Grass Animation
     gsap.from(".hero-desktop-grass", {
       y: 80,
-      duration: 1.5,
+      duration: 2,
+      ease: "power2.out",
     });
 
+    // Heart Animation
     gsap.from(".hero-desktop-heart", {
-      duration: 1,
+      duration: 2.5,
       motionPath: {
         path: "#hero-line-top-left-path",
         align: "#hero-line-top-left-path",
-        autoRotate: true,
-        // start: 1,
-        // end: 0.1,
+        alignOrigin: [0.5, 0.5],
+        start: 0.8,
+        end: 1,
       },
+      ease: "sine.inOut",
     });
 
+    // Square Animation
+    gsap.from(".hero-desktop-square", {
+      duration: 2.5,
+      motionPath: {
+        path: "#hero-line-top-right-path",
+        align: "#hero-line-top-right-path",
+        start: 0.8,
+        end: 0.9,
+      },
+      ease: "sine.inOut",
+    });
+
+    // Butterfly Animation
+    gsap.to(".hero-desktop-butterfly", {
+      duration: 3,
+      motionPath: {
+        path: "#hero-line-bottom-left-2-path",
+        align: "#hero-line-bottom-left-2-path",
+        alignOrigin: [0.5, 0.5],
+        autoRotate: true,
+        start: 0.6,
+        end: 1,
+      },
+      ease: "power1.inOut",
+    });
+
+    // Circle Animation
+    gsap.from(".hero-desktop-circle", {
+      duration: 2.5,
+      scale: 0.5,
+      motionPath: {
+        path: "#hero-line-bottom-right-path",
+        align: "#hero-line-bottom-right-path",
+        alignOrigin: [0.5, 0.5],
+        autoRotate: true,
+        start: 0.85,
+        end: 1,
+      },
+      ease: "sine.inOut",
+    });
+
+    // Tree Animation Timeline
     const tree2tl = gsap.timeline({ repeat: -1, yoyo: true });
-    tree2tl.to(".hero-desktop-tree-1", {
-      rotate: 20,
-      duration: 2,
-      ease: "power2.inOut",
+    tree2tl
+      .to(".hero-desktop-tree-1", {
+        rotate: 20,
+        duration: 3,
+        ease: "power2.inOut",
+      })
+      .to(".hero-desktop-tree-1", {
+        rotate: 0,
+        duration: 3,
+        ease: "power2.inOut",
+      })
+      .to(".hero-desktop-tree-1", {
+        rotate: -10,
+        duration: 2,
+        ease: "power2.inOut",
+      });
+
+    // Frames Animation
+    const frames = [
+      ".hero-frame-desktop-1",
+      ".hero-frame-desktop-2",
+      ".hero-frame-desktop-3,.hero-frame-desktop-4",
+    ];
+    frames.forEach((frame, index) => {
+      gsap.from(frame, {
+        opacity: 0,
+        rotate: index % 2 === 0 ? -3 : 3,
+        duration: 2,
+        scale: 0.8,
+        ease: "sine.out",
+        delay: index * 0.2,
+      });
     });
 
-    tree2tl.to(".hero-desktop-tree-1", {
-      rotate: 0,
-      duration: 3,
-      ease: "power2.inOut",
-    });
-
-    tree2tl.to(".hero-desktop-tree-1", {
-      rotate: -10,
-      duration: 1.5,
-      ease: "power2.inOut",
-    });
-
-    tree2tl.to(".hero-desktop-tree-1", {
-      rotate: 20,
-      duration: 3,
-      ease: "power2.inOut",
-    });
+    // Hover Effects
+    const onHoverIn = (el: Element, rotateTo: number) => {
+      gsap.to(el, { rotate: rotateTo, duration: 0.6, ease: "sine.out" });
+    };
+    const onHoverOut = (el: Element, rotateBack: number) => {
+      gsap.to(el, { rotate: rotateBack, duration: 0.6, ease: "sine.out" });
+    };
 
     const frame1 = document.querySelector(".hero-frame-desktop-1");
     const frame2 = document.querySelector(".hero-frame-desktop-2");
-    const tree2 = document.querySelector(".hero-desktop-tree-2");
-
-    if (frame1 && frame2) {
-      gsap.from(frame1, {
-        opacity: 0,
-        rotate: -1,
-        duration: 1.5,
-        scale: 0.8,
-      });
-
-      gsap.from(frame2, {
-        opacity: 0,
-        rotate: 1,
-        duration: 1.5,
-        scale: 0.8,
-      });
-
-      gsap.from(".hero-frame-desktop-3,.hero-frame-desktop-4", {
-        opacity: 0,
-        rotate: 3,
-        duration: 1.5,
-        scale: 0.8,
-      });
-    }
-
-    const onHoverIn = (el: Element, enter: number) => {
-      gsap.to(el, { rotate: enter, duration: 0.8 });
-    };
-
-    const onHoverOut = (el: Element, out: number) => {
-      gsap.to(el, { rotate: out, duration: 0.8 });
-    };
 
     if (frame1) {
-      frame1.addEventListener("mouseenter", () => {
-        onHoverIn(frame1, -8);
-        if (tree2) gsap.to(tree2, { rotate: 1, duration: 0.3 });
-      });
-
-      frame1.addEventListener("mouseleave", () => {
-        onHoverOut(frame1, -7);
-        if (tree2) gsap.to(tree2, { rotate: -1, duration: 0.3 });
-      });
+      frame1.addEventListener("mouseenter", () => onHoverIn(frame1, -8));
+      frame1.addEventListener("mouseleave", () => onHoverOut(frame1, -7));
     }
 
     if (frame2) {
@@ -110,18 +138,11 @@ export default function HeroDesktop() {
 
     return () => {
       if (frame1) {
-        frame1.removeEventListener("mouseenter", () => {
-          onHoverIn(frame1, -7);
-          if (tree2) gsap.to(tree2, { rotate: 5, duration: 0.3 });
-        });
-        frame1.removeEventListener("mouseleave", () => {
-          onHoverOut(frame1, -7);
-          if (tree2) gsap.to(tree2, { rotate: -5, duration: 0.3 });
-        });
+        frame1.removeEventListener("mouseenter", () => onHoverIn(frame1, -8));
+        frame1.removeEventListener("mouseleave", () => onHoverOut(frame1, -7));
       }
-
       if (frame2) {
-        frame2.removeEventListener("mouseenter", () => onHoverIn(frame2, 7));
+        frame2.removeEventListener("mouseenter", () => onHoverIn(frame2, 8));
         frame2.removeEventListener("mouseleave", () => onHoverOut(frame2, 7));
       }
     };
@@ -155,14 +176,7 @@ export default function HeroDesktop() {
           </Link>
         </div>
 
-        {/* Overlays */}
-        {/* <Image
-          src={"/assets/hero-line-top-left.svg"}
-          alt="line-overlay"
-          width={219}
-          height={234}
-          className="hero-line-top-left"
-          /> */}
+        {/* Line 1 - Top Left Corner */}
         <svg
           width="222"
           className="hero-line-top-left"
@@ -181,13 +195,26 @@ export default function HeroDesktop() {
           />
         </svg>
 
-        <Image
-          src={"/assets/hero-line-top-right.svg"}
-          alt="line-overlay"
-          width={544}
-          height={131}
+        {/* Line 2 - Top Right Corner */}
+        <svg
+          width="514"
+          height="132"
+          viewBox="0 0 514 132"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
           className="hero-line-top-right"
-        />
+        >
+          <path
+            id="hero-line-top-right-path"
+            d="M1.27344 0C1.92814 6.54705 7.1524 13.2063 10.8853 18.4057C20.5059 31.8059 29.1139 46.2461 40.8456 57.9778C56.8095 73.9417 71.5952 83.8336 91.8702 93.9711C134.106 115.089 176.469 119.506 222.244 126.181C260.86 131.813 301.44 132.46 340.142 128.942C372.325 126.016 403.831 121.792 435.852 116.365C452.508 113.542 467.694 107.084 483.911 103.481C493.016 101.457 501.35 98.8866 510.088 95.7094C513.615 94.4267 520.87 93.7912 523.585 91.6193C527.727 88.3056 540.462 84.666 546.081 84.666"
+            stroke="#BABABA"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-dasharray="10 10"
+          />
+        </svg>
+
+        {/* Line 3 - Bottom Left 1 */}
         <Image
           src={"/assets/hero-line-bottom-left-1.svg"}
           alt="line-overlay"
@@ -195,20 +222,44 @@ export default function HeroDesktop() {
           height={150}
           className="hero-line-bottom-left-1"
         />
-        <Image
-          src={"/assets/hero-line-bottom-left-2.svg"}
-          alt="line-overlay"
-          width={144}
-          height={194}
+
+        {/* Line 4 - Bottom Left 2 */}
+        <svg
+          width="132"
+          height="148"
+          viewBox="0 0 132 148"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
           className="hero-line-bottom-left-2"
-        />
-        <Image
-          src={"/assets/hero-line-bottom-right.svg"}
-          alt="line-overlay"
-          width={552}
-          height={279}
+        >
+          <path
+            id="hero-line-bottom-left-2-path"
+            d="M8.83988 207.55C-5.31564 188.676 3.74328 148.826 7.53837 128.902C13.9111 95.4449 30.5261 63.2826 53.091 37.9826C72.3271 16.4149 102.092 1.72639 130.995 1.72639"
+            stroke="#BABABA"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-dasharray="10 10"
+          />
+        </svg>
+
+        {/* Line 4 - Bottom Right */}
+        <svg
+          width="531"
+          height="268"
+          viewBox="0 0 531 268"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
           className="hero-line-bottom-right"
-        />
+        >
+          <path
+            id="hero-line-bottom-right-path"
+            d="M553.881 0.878906C541.927 23.7003 518.177 39.1752 498.664 55.1756C463.592 83.9341 425.937 104.263 383.935 121.538C343.843 138.028 302.29 151.091 261.64 166.121C228.046 178.542 187.517 186.562 152.002 185.038C122.645 183.778 94.7524 183.148 67.502 172C48.502 164.227 40.9725 151.268 42.002 139.944C43.6987 121.279 60.6981 107.068 79.0147 117.244C86.9001 121.624 92.3077 124 101.002 141.5C103.009 156.556 104.768 169.613 102.84 185.038C101.562 195.258 96.7795 206.285 92.3077 215.407C88.7625 222.639 83.155 227.915 79.4237 234.631C73.3634 245.539 56.7152 256.197 45.8845 263.16C32.7757 271.587 17.7066 280.645 1.71094 280.645"
+            stroke="#BABABA"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-dasharray="10 10"
+          />
+        </svg>
 
         {/* Frames */}
         <HeroImageFrame
