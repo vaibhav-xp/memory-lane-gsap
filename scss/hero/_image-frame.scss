@@ -69,3 +69,54 @@
     right: 16vw;
     bottom: -4vw;
 }
+
+// Small Devices
+@media (max-width: 1023) {
+    .hero-image-frame {
+        >div {
+            margin-top: 6vw;
+        }
+
+        >p {
+            margin-top: 2vw;
+            font-size: 3vw;
+        }
+    }
+}
+
+.hero-frame-mobile-1 {
+    aspect-ratio: 148/193;
+    width: 39vw;
+    height: auto;
+    bottom: 10vw;
+    rotate: -7deg;
+    left: -4vw;
+}
+
+.hero-frame-mobile-2 {
+    aspect-ratio: 147/192;
+    width: 39vw;
+    height: auto;
+    bottom: 15vw;
+    rotate: 7deg;
+    right: -5vw;
+
+    >div>img {
+        object-position: 0% 16%;
+    }
+}
+
+.hero-frame-mobile-3 {
+    aspect-ratio: 147/192;
+    transform: translateX(-50%);
+    width: 39vw;
+    height: auto;
+    bottom: 15vw;
+    left: 50vw;
+    rotate: 0;
+
+    >div>img {
+        object-position: 0% 100%;
+        scale: 1.2;
+    }
+}

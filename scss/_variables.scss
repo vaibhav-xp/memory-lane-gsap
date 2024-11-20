@@ -103,7 +103,7 @@ html {
 
 body {
     @include ff-manrope;
-    user-select: none;
+    // user-select: none;
     color: $text;
     font-size: 1.6rem;
 }

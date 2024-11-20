@@ -1,0 +1,55 @@
+@use "../variables" as *;
+
+.header-desk__content__middle--mobile {
+    margin: auto;
+    margin-top: 4vw;
+
+    >p:first-of-type {
+        font-size: 1.6rem;
+    }
+
+    >p:last-of-type {
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+}
+
+.hero-mob-grass {
+    position: absolute;
+    aspect-ratio: 90/49;
+    width: 24vw;
+    height: auto;
+    bottom: 2vw;
+    left: 50vw;
+    rotate: -15deg;
+}
+
+.hero-mobile-tree-1 {
+    position: absolute;
+    aspect-ratio: 108/153;
+    width: 15vw;
+    height: auto;
+    left: 6vw;
+    bottom: 58vw;
+}
+
+.hero-line-top-right-mob {
+    aspect-ratio: 544/131;
+    position: absolute;
+    width: 70vw;
+    height: auto;
+    bottom: 60vw;
+    right: -30vw;
+    rotate: 150deg;
+    transform: scaleX(-1);
+}
+
+.hero-mobile-square {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    aspect-ratio: square;
+    width: 8vw;
+    height: auto;
+    top: 55vw;
+    right: 3vw;
+}

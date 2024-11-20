@@ -96,6 +96,18 @@ export default function HeroDesktop() {
       delay: 0.5,
     });
 
+    gsap.from(".hero-desktop-tree-1", {
+      opacity: 0,
+      x: 20,
+      duration: 3,
+    });
+
+    gsap.from(".hero-desktop-tree-2", {
+      opacity: 0,
+      y: 20,
+      duration: 3,
+    });
+
     // Tree Animation Timeline
     const tree2tl = gsap.timeline({ repeat: -1, yoyo: true });
     tree2tl
